@@ -5156,19 +5156,14 @@ static part_5() {
 	MakeStr(0x80336CDC, 0x80336CE7);
 	MakeName(0x80336CE8, "aAram_arc");
 	MakeStr(0x80336CE8, 0x80336CF2);
-	MakeName(0x80336CF4, "aCoursenameSS_n");
-	MakeStr(0x80336CF4, 0x80336D0F);
-	MakeName(0x80336D10, "aStaffghostsS_g");
-	MakeStr(0x80336D10, 0x80336D24);
-	MakeName(0x80336D24, "aCourseLuigi2S_");
-	MakeStr(0x80336D24, 0x80336D39);
-	MakeName(0x80336D3C, "CourseNameFormat");
-	MakeName(0x80336D50, "aAwarddataSAwar");
-	MakeStr(0x80336D50, 0x80336D6A);
-	MakeName(0x80336D6C, "aAwarddataAward");
-	MakeStr(0x80336D6C, 0x80336D84);
-	MakeName(0x80336D84, "aMovieOpening_a");
-	MakeStr(0x80336D84, 0x80336D97);
+	MakeName(0x80336CF4, "CourseTitleImage");
+	MakeName(0x80336D10, "TrackStaffGhost");
+	MakeComm(0x80336D24, "Luigi's Circuit is a little different, it has two different versions that change based on the speed selected.");
+	MakeName(0x80336D24, "AltCourseArchiveLuigi");
+	MakeName(0x80336D3C, "CourseArchiveName");
+	MakeName(0x80336D50, "AwardGUIData");
+	MakeName(0x80336D6C, "AwardCupArchive");
+	MakeName(0x80336D84, "OpeningVideoArchive");
 	MakeName(0x80336D98, "aResmgr_cpp");
 	MakeStr(0x80336D98, 0x80336DA3);
 	MakeName(0x80336DA4, "aTaskFull");
@@ -6038,15 +6033,15 @@ static part_5() {
 	MakeName(0x8033979C, "aObjectsJg_no_b");
 	MakeStr(0x8033979C, 0x803397AF);
 	MakeName(0x803397B0, "aObjectsJg_st_b");
-}
-
-
-static part_6() {
 	MakeStr(0x803397B0, 0x803397C3);
 	MakeName(0x803397C4, "aObjectsJg_wy_b");
 	MakeStr(0x803397C4, 0x803397D7);
 	MakeName(0x803397D8, "aObjectsJg_in_a");
 	MakeStr(0x803397D8, 0x803397ED);
+}
+
+
+static part_6() {
 	MakeName(0x803397F0, "aObjectsJg_wait");
 	MakeStr(0x803397F0, 0x80339805);
 	MakeName(0x80339808, "aObjectsJg_out_");
@@ -7042,15 +7037,15 @@ static part_6() {
 	MakeName(0x80345978, "aDolphinSdkViRe");
 	MakeStr(0x80345978, 0x803459BC);
 	MakeComm(0x80345B6C, "jump table for switch statement");
-}
-
-
-static part_7() {
 	MakeName(0x80345B6C, "jpt_800AEF5C");
 	MakeName(0x80345C04, "aCAUTION");
 	MakeStr(0x80345C04, 0x80345C2D);
 	MakeName(0x80345C30, "aThisTvFormatDe");
 	MakeStr(0x80345C30, 0x80345C59);
+}
+
+
+static part_7() {
 	MakeName(0x80345C5C, "aTemporarySolut");
 	MakeStr(0x80345C5C, 0x80345C85);
 	MakeName(0x80345C88, "aIsAvailable_Pl");
@@ -8046,15 +8041,15 @@ static part_7() {
 	MakeName(0x803C99B8, "aZ");
 	MakeStr(0x803C99B8, 0x803C99BA);
 	MakeName(0x803C99BC, "aZip");
-}
-
-
-static part_8() {
 	MakeStr(0x803C99BC, 0x803C99C0);
 	MakeName(0x803C99C0, "aSS_0");
 	MakeStr(0x803C99C0, 0x803C99C6);
 	MakeName(0x803C99C8, "aClose");
 	MakeStr(0x803C99C8, 0x803C99CE);
+}
+
+
+static part_8() {
 	MakeName(0x803C99D0, "aEn");
 	MakeStr(0x803C99D0, 0x803C99D3);
 	MakeName(0x803C99D4, "aD_1");
@@ -8589,6 +8584,196 @@ static part_8() {
 	MakeStr(0x803CF81C, 0x803CF81F);
 	MakeName(0x803CF820, "aD_2");
 	MakeStr(0x803CF820, 0x803CF823);
+	MakeComm(0x803CF8A0, "Luigi's character (Character Slot 0)");
+	MakeName(0x803CF8A0, "CharacterLuigi");
+	MakeComm(0x803CF8A8, "Peach Beach (Map Slot 1)");
+	MakeName(0x803CF8A8, "CourseNamePeach");
+	MakeComm(0x803CF8B0, "Dry Dry Desert (Map Slot 3)");
+	MakeName(0x803CF8B0, "CourseNameDesert");
+	MakeName(0x803CF8B8, "aDaisy_3");
+	MakeStr(0x803CF8B8, 0x803CF8C0);
+	MakeName(0x803CF8C0, "aSnow");
+	MakeStr(0x803CF8C0, 0x803CF8C8);
+	MakeName(0x803CF8C8, "aMario_3");
+	MakeStr(0x803CF8C8, 0x803CF8D0);
+	MakeName(0x803CF8D0, "aWaluigi_3");
+	MakeStr(0x803CF8D0, 0x803CF8D8);
+	MakeName(0x803CF8D8, "aDonkey_1");
+	MakeStr(0x803CF8D8, 0x803CF8E0);
+	MakeName(0x803CF8E0, "aKoopa_3");
+	MakeStr(0x803CF8E0, 0x803CF8E8);
+	MakeName(0x803CF8E8, "aDiddy_2");
+	MakeStr(0x803CF8E8, 0x803CF8F0);
+	MakeName(0x803CF8F0, "aYoshi_3");
+	MakeStr(0x803CF8F0, 0x803CF8F8);
+	MakeName(0x803CF8F8, "aWario_3");
+	MakeStr(0x803CF8F8, 0x803CF900);
+	MakeName(0x803CF900, "aRainbow");
+	MakeStr(0x803CF900, 0x803CF908);
+	MakeName(0x803CF908, "aTest1");
+	MakeStr(0x803CF908, 0x803CF910);
+	MakeName(0x803CF910, "aTest2");
+	MakeStr(0x803CF910, 0x803CF918);
+	MakeName(0x803CF918, "aTest3");
+	MakeStr(0x803CF918, 0x803CF920);
+	MakeName(0x803CF920, "aTest4");
+	MakeStr(0x803CF920, 0x803CF928);
+	MakeName(0x803CF928, "aTest5");
+	MakeStr(0x803CF928, 0x803CF930);
+	MakeName(0x803CF930, "aTest6");
+	MakeStr(0x803CF930, 0x803CF938);
+	MakeName(0x803CF938, "aTest7");
+	MakeStr(0x803CF938, 0x803CF940);
+	MakeName(0x803CF940, "aTest8");
+	MakeStr(0x803CF940, 0x803CF948);
+	MakeName(0x803CF948, "aTest9");
+	MakeStr(0x803CF948, 0x803CF950);
+	MakeName(0x803CF950, "aTest10");
+	MakeStr(0x803CF950, 0x803CF958);
+	MakeName(0x803CF958, "aTest11");
+	MakeStr(0x803CF958, 0x803CF960);
+	MakeName(0x803CF960, "aTest12");
+	MakeStr(0x803CF960, 0x803CF968);
+	MakeName(0x803CF968, "aE3a3");
+	MakeStr(0x803CF968, 0x803CF970);
+	MakeName(0x803CF970, "aTest13");
+	MakeStr(0x803CF970, 0x803CF978);
+	MakeName(0x803CF978, "aTest14");
+	MakeStr(0x803CF978, 0x803CF980);
+	MakeName(0x803CF980, "aTest15");
+	MakeStr(0x803CF980, 0x803CF988);
+	MakeName(0x803CF988, "aTest16");
+	MakeStr(0x803CF988, 0x803CF990);
+	MakeName(0x803CF990, "aTest17");
+	MakeStr(0x803CF990, 0x803CF998);
+	MakeName(0x803CF998, "aTest18");
+	MakeStr(0x803CF998, 0x803CF9A0);
+	MakeName(0x803CF9A0, "aTest19");
+	MakeStr(0x803CF9A0, 0x803CF9A8);
+	MakeName(0x803CF9A8, "aTest20");
+	MakeStr(0x803CF9A8, 0x803CF9B0);
+	MakeName(0x803CF9B0, "aTest21");
+	MakeStr(0x803CF9B0, 0x803CF9B8);
+	MakeName(0x803CF9B8, "aTest22");
+	MakeStr(0x803CF9B8, 0x803CF9C0);
+	MakeName(0x803CF9C0, "aTest23");
+	MakeStr(0x803CF9C0, 0x803CF9C8);
+	MakeName(0x803CF9C8, "aTest24");
+	MakeStr(0x803CF9C8, 0x803CF9D0);
+	MakeName(0x803CF9D0, "aTest25");
+	MakeStr(0x803CF9D0, 0x803CF9D8);
+	MakeName(0x803CF9D8, "aTest26");
+	MakeStr(0x803CF9D8, 0x803CF9E0);
+	MakeName(0x803CF9E0, "aTest27");
+	MakeStr(0x803CF9E0, 0x803CF9E8);
+	MakeName(0x803CF9E8, "aMini1");
+	MakeStr(0x803CF9E8, 0x803CF9F0);
+	MakeName(0x803CF9F0, "aMini2");
+	MakeStr(0x803CF9F0, 0x803CF9F8);
+	MakeName(0x803CF9F8, "aMini3");
+	MakeStr(0x803CF9F8, 0x803CFA00);
+	MakeName(0x803CFA00, "aMini4");
+	MakeStr(0x803CFA00, 0x803CFA08);
+	MakeName(0x803CFA08, "aMini5");
+	MakeStr(0x803CFA08, 0x803CFA10);
+	MakeName(0x803CFA10, "aMini6");
+	MakeStr(0x803CFA10, 0x803CFA18);
+	MakeName(0x803CFA18, "aMini7");
+	MakeStr(0x803CFA18, 0x803CFA20);
+	MakeName(0x803CFA20, "aMini8");
+	MakeStr(0x803CFA20, 0x803CFA28);
+	MakeName(0x803CFA28, "aAward");
+	MakeStr(0x803CFA28, 0x803CFA30);
+	MakeName(0x803CFA30, "aEnding");
+	MakeStr(0x803CFA30, 0x803CFA38);
+	MakeName(0x803CFA38, "aKinoko_0");
+	MakeStr(0x803CFA38, 0x803CFA40);
+	MakeName(0x803CFA40, "aFlower_1");
+	MakeStr(0x803CFA40, 0x803CFA48);
+	MakeName(0x803CFA48, "aStar_2");
+	MakeStr(0x803CFA48, 0x803CFA50);
+	MakeName(0x803CFA50, "aSpecial_1");
+	MakeStr(0x803CFA50, 0x803CFA58);
+	MakeName(0x803CFA58, "aAlltour");
+	MakeStr(0x803CFA58, 0x803CFA60);
+	MakeName(0x803CFA60, "aSky_bmd");
+	MakeStr(0x803CFA60, 0x803CFA68);
+	MakeName(0x803CFA68, "aSky_btk");
+	MakeStr(0x803CFA68, 0x803CFA70);
+	MakeName(0x803CFA70, "aSky_brk");
+	MakeStr(0x803CFA70, 0x803CFA78);
+	MakeName(0x803CFA78, "aMap_bti");
+	MakeStr(0x803CFA78, 0x803CFA80);
+	MakeName(0x803CFA80, "aBaby");
+	MakeStr(0x803CFA80, 0x803CFA88);
+	MakeName(0x803CFA88, "aBblui");
+	MakeStr(0x803CFA88, 0x803CFA90);
+	MakeName(0x803CFA90, "aNoko_0");
+	MakeStr(0x803CFA90, 0x803CFA98);
+	MakeName(0x803CFA98, "aPata_0");
+	MakeStr(0x803CFA98, 0x803CFAA0);
+	MakeName(0x803CFAA0, "aDiddy_3");
+	MakeStr(0x803CFAA0, 0x803CFAA8);
+	MakeName(0x803CFAA8, "aJr");
+	MakeStr(0x803CFAA8, 0x803CFAAC);
+	MakeName(0x803CFAAC, "aKpio");
+	MakeStr(0x803CFAAC, 0x803CFAB4);
+	MakeName(0x803CFAB4, "aKpico");
+	MakeStr(0x803CFAB4, 0x803CFABC);
+	MakeName(0x803CFABC, "aMario_4");
+	MakeStr(0x803CFABC, 0x803CFAC4);
+	MakeName(0x803CFAC4, "aLuigi_3");
+	MakeStr(0x803CFAC4, 0x803CFACC);
+	MakeName(0x803CFACC, "aPeach_3");
+	MakeStr(0x803CFACC, 0x803CFAD4);
+	MakeName(0x803CFAD4, "aDaisy_4");
+	MakeStr(0x803CFAD4, 0x803CFADC);
+	MakeName(0x803CFADC, "aYoshi_4");
+	MakeStr(0x803CFADC, 0x803CFAE4);
+	MakeName(0x803CFAE4, "aCathy");
+	MakeStr(0x803CFAE4, 0x803CFAEC);
+	MakeName(0x803CFAEC, "aWalui");
+	MakeStr(0x803CFAEC, 0x803CFAF4);
+	MakeName(0x803CFAF4, "aWario_4");
+	MakeStr(0x803CFAF4, 0x803CFAFC);
+	MakeName(0x803CFAFC, "aDk_0");
+	MakeStr(0x803CFAFC, 0x803CFB00);
+	MakeName(0x803CFB00, "aKoopa_4");
+	MakeStr(0x803CFB00, 0x803CFB08);
+	MakeName(0x803CFB08, "aPakku");
+	MakeStr(0x803CFB08, 0x803CFB10);
+	MakeName(0x803CFB10, "aTeres");
+	MakeStr(0x803CFB10, 0x803CFB18);
+	MakeName(0x803CFB18, "aExtra_0");
+	MakeStr(0x803CFB18, 0x803CFB20);
+	MakeName(0x803CFB20, "aArm_bmd");
+	MakeStr(0x803CFB20, 0x803CFB28);
+	MakeName(0x803CFB28, "aDk_1");
+	MakeStr(0x803CFB28, 0x803CFB2C);
+	MakeName(0x803CFB2C, "aDkjr_0");
+	MakeStr(0x803CFB2C, 0x803CFB34);
+	MakeName(0x803CFB34, "aKoopajr_2");
+	MakeStr(0x803CFB34, 0x803CFB3C);
+	MakeName(0x803CFB3C, "aKinopio_3");
+	MakeStr(0x803CFB3C, 0x803CFB44);
+	MakeName(0x803CFB44, "aBmd");
+	MakeStr(0x803CFB44, 0x803CFB48);
+	MakeName(0x803CFB48, "aBls");
+	MakeStr(0x803CFB48, 0x803CFB4C);
+	MakeName(0x803CFB4C, "aBlk");
+	MakeStr(0x803CFB4C, 0x803CFB50);
+	MakeName(0x803CFB50, "aDvd_bmg");
+	MakeStr(0x803CFB50, 0x803CFB58);
+	MakeName(0x803CFB58, "aLan_bmg");
+	MakeStr(0x803CFB58, 0x803CFB60);
+	MakeName(0x803CFB60, "aIpl_bmg");
+	MakeStr(0x803CFB60, 0x803CFB68);
+	MakeName(0x803CFB68, "aCrs_arc");
+	MakeStr(0x803CFB68, 0x803CFB70);
+	MakeName(0x803CFB70, "aL");
+	MakeStr(0x803CFB70, 0x803CFB78);
+	MakeName(0x803CFB78, "aS_0");
+	MakeStr(0x803CFB78, 0x803CFB7C);
 	MakeName(0x803CFCE0, "aPata");
 	MakeStr(0x803CFCE0, 0x803CFCE5);
 	MakeName(0x803CFCE8, "aNoko");
