@@ -1470,6 +1470,8 @@ static part_1() {
 	MakeRptCmt(0x80101A68, "jumptable 80101818 default case");
 	MakeName(0x80101A68, "def_80101818");
 	MakeName(0x801037FC, "dlphn___sinit_AILoader_cpp");
+	SetFunctionCmt(0x801038B0, "Has something to do with strings.\nIs always called after 801CE3C0 is used.", 0);
+	MakeName(0x801038B0, "UnknownFunction");
 	MakeRptCmt(0x80105040, "jumptable 8010503C cases 12,17");
 	MakeRptCmt(0x8010507C, "jumptable 8010503C case 23");
 	MakeRptCmt(0x80105090, "jumptable 8010503C case 29");
@@ -2020,12 +2022,12 @@ static part_1() {
 	MakeRptCmt(0x8013E39C, "jumptable 8013E2FC default case");
 	MakeName(0x8013E39C, "def_8013E2FC");
 	MakeRptCmt(0x8013E454, "jumptable 8013E450 case 0");
-	MakeRptCmt(0x8013E468, "jumptable 8013E450 case 1");
-	MakeRptCmt(0x8013E47C, "jumptable 8013E450 case 2");
 }
 
 
 static part_2() {
+	MakeRptCmt(0x8013E468, "jumptable 8013E450 case 1");
+	MakeRptCmt(0x8013E47C, "jumptable 8013E450 case 2");
 	MakeRptCmt(0x8013E490, "jumptable 8013E450 case 3");
 	MakeRptCmt(0x8013E4A4, "jumptable 8013E450 case 4");
 	MakeRptCmt(0x8013E4B8, "jumptable 8013E450 case 5");
@@ -2567,6 +2569,8 @@ static part_2() {
 	MakeRptCmt(0x801CDED8, "jumptable 801CDC50 case 10");
 	MakeRptCmt(0x801CDEF8, "jumptable 801CDC50 default case");
 	MakeName(0x801CDEF8, "def_801CDC50");
+	SetFunctionCmt(0x801CE3C0, "r2 seems to always be 803d45a0 when this function is called", 0);
+	MakeName(0x801CE3C0, "UnknownArray");
 	MakeRptCmt(0x801CE3E8, "jumptable 801CE3E4 case 36");
 	MakeRptCmt(0x801CE3F0, "jumptable 801CE3E4 case 34");
 	MakeRptCmt(0x801CE3F8, "jumptable 801CE3E4 case 33");
@@ -3022,14 +3026,14 @@ static part_2() {
 	MakeRptCmt(0x80202588, "jumptable 80202530 case 3");
 	MakeRptCmt(0x802025A4, "jumptable 80202530 case 4");
 	MakeRptCmt(0x802025C0, "jumptable 80202530 case 5");
-	MakeRptCmt(0x802025DC, "jumptable 80202530 case 6");
-	MakeRptCmt(0x802025F8, "jumptable 80202530 case 7");
-	MakeRptCmt(0x80202614, "jumptable 80202530 case 8");
-	MakeRptCmt(0x80202630, "jumptable 80202530 case 9");
 }
 
 
 static part_3() {
+	MakeRptCmt(0x802025DC, "jumptable 80202530 case 6");
+	MakeRptCmt(0x802025F8, "jumptable 80202530 case 7");
+	MakeRptCmt(0x80202614, "jumptable 80202530 case 8");
+	MakeRptCmt(0x80202630, "jumptable 80202530 case 9");
 	MakeRptCmt(0x8020264C, "jumptable 80202530 case 10");
 	MakeRptCmt(0x80202668, "jumptable 80202530 case 11");
 	MakeRptCmt(0x80202680, "jumptable 80202530 default case");
@@ -4026,14 +4030,14 @@ static part_3() {
 	MakeStr(0x8032C369, 0x8032C371);
 	MakeName(0x8032C371, "aRcurs03");
 	MakeStr(0x8032C371, 0x8032C379);
-	MakeName(0x8032C379, "aRchab02rchara0");
-	MakeStr(0x8032C379, 0x8032C389);
-	MakeName(0x8032C389, "aRchab01rchara0");
-	MakeStr(0x8032C389, 0x8032C399);
 }
 
 
 static part_4() {
+	MakeName(0x8032C379, "aRchab02rchara0");
+	MakeStr(0x8032C379, 0x8032C389);
+	MakeName(0x8032C389, "aRchab01rchara0");
+	MakeStr(0x8032C389, 0x8032C399);
 	MakeName(0x8032C39A, "aRpos00");
 	MakeStr(0x8032C39A, 0x8032C3A1);
 	MakeName(0x8032C3A1, "aRtime00");
@@ -5030,14 +5034,14 @@ static part_4() {
 	MakeStr(0x803355F8, 0x8033560A);
 	MakeName(0x8033560C, "aStaffroll_14_3");
 	MakeStr(0x8033560C, 0x8033561E);
-	MakeName(0x80335620, "aStaffroll_15_3");
-	MakeStr(0x80335620, 0x80335632);
-	MakeName(0x80335634, "aStaffroll_16_4");
-	MakeStr(0x80335634, 0x80335646);
 }
 
 
 static part_5() {
+	MakeName(0x80335620, "aStaffroll_15_3");
+	MakeStr(0x80335620, 0x80335632);
+	MakeName(0x80335634, "aStaffroll_16_4");
+	MakeStr(0x80335634, 0x80335646);
 	MakeName(0x80335648, "aStaffroll_17_4");
 	MakeStr(0x80335648, 0x8033565A);
 	MakeName(0x8033565C, "aStaffroll_16_5");
@@ -5060,28 +5064,40 @@ static part_5() {
 	MakeStr(0x803356FC, 0x8033570D);
 	MakeName(0x80336A30, "aKartSel");
 	MakeStr(0x80336A30, 0x80336A39);
+	MakeComm(0x80336A98, "Accessed at 801CE3F8");
 	MakeName(0x80336A98, "aBabyluigi");
 	MakeStr(0x80336A98, 0x80336AA2);
+	MakeComm(0x80336AA4, "Accessed at 801CE400");
 	MakeName(0x80336AA4, "aNokonoko_0");
 	MakeStr(0x80336AA4, 0x80336AAD);
+	MakeComm(0x80336AB0, "Accessed at 801CE428");
 	MakeName(0x80336AB0, "aPatapata_0");
 	MakeStr(0x80336AB0, 0x80336AB9);
+	MakeComm(0x80336ABC, "Accessed at 801CE4D0");
 	MakeName(0x80336ABC, "aDekoboko");
 	MakeStr(0x80336ABC, 0x80336AC5);
+	MakeComm(0x80336AC8, "Accessed at 801CE598");
 	MakeName(0x80336AC8, "aReverse1");
 	MakeStr(0x80336AC8, 0x80336AD1);
+	MakeComm(0x80336AD4, "Accessed at 801CE5A0");
 	MakeName(0x80336AD4, "aReverse2");
 	MakeStr(0x80336AD4, 0x80336ADD);
+	MakeComm(0x80336AE0, "Accessed at 801CE5A8");
 	MakeName(0x80336AE0, "aReverse3");
 	MakeStr(0x80336AE0, 0x80336AE9);
+	MakeComm(0x80336AEC, "Accessed at 801CE5B0");
 	MakeName(0x80336AEC, "aReverse4");
 	MakeStr(0x80336AEC, 0x80336AF5);
+	MakeComm(0x80336AF8, "Accessed at 801CE5B8");
 	MakeName(0x80336AF8, "aReverse5");
 	MakeStr(0x80336AF8, 0x80336B01);
+	MakeComm(0x80336B04, "Accessed at 801CE5C0");
 	MakeName(0x80336B04, "aReverse6");
 	MakeStr(0x80336B04, 0x80336B0D);
+	MakeComm(0x80336B10, "Accessed at 801CE5C8");
 	MakeName(0x80336B10, "aReverse7");
 	MakeStr(0x80336B10, 0x80336B19);
+	MakeComm(0x80336B1C, "Accessed at 801CE5D0");
 	MakeName(0x80336B1C, "aReverse8");
 	MakeStr(0x80336B1C, 0x80336B25);
 	MakeName(0x80336B28, "aCourse_bmd");
@@ -6022,6 +6038,10 @@ static part_5() {
 	MakeStr(0x80339720, 0x80339733);
 	MakeName(0x80339734, "aObjectsJg_wz2f");
 	MakeStr(0x80339734, 0x8033974A);
+}
+
+
+static part_6() {
 	MakeName(0x8033974C, "aObjectsJg_lk_b");
 	MakeStr(0x8033974C, 0x8033975F);
 	MakeName(0x80339760, "aObjectsJg_by_b");
@@ -6038,10 +6058,6 @@ static part_5() {
 	MakeStr(0x803397C4, 0x803397D7);
 	MakeName(0x803397D8, "aObjectsJg_in_a");
 	MakeStr(0x803397D8, 0x803397ED);
-}
-
-
-static part_6() {
 	MakeName(0x803397F0, "aObjectsJg_wait");
 	MakeStr(0x803397F0, 0x80339805);
 	MakeName(0x80339808, "aObjectsJg_out_");
@@ -7026,6 +7042,10 @@ static part_6() {
 	MakeName(0x8034588C, "jpt_800AE384");
 	MakeName(0x80345908, "aGameName___CCC");
 	MakeStr(0x80345908, 0x80345922);
+}
+
+
+static part_7() {
 	MakeName(0x80345924, "aCompany_____CC");
 	MakeStr(0x80345924, 0x8034593A);
 	MakeName(0x8034593C, "aDisk______D");
@@ -7042,10 +7062,6 @@ static part_6() {
 	MakeStr(0x80345C04, 0x80345C2D);
 	MakeName(0x80345C30, "aThisTvFormatDe");
 	MakeStr(0x80345C30, 0x80345C59);
-}
-
-
-static part_7() {
 	MakeName(0x80345C5C, "aTemporarySolut");
 	MakeStr(0x80345C5C, 0x80345C85);
 	MakeName(0x80345C88, "aIsAvailable_Pl");
@@ -8030,6 +8046,10 @@ static part_7() {
 	MakeStr(0x803C99A0, 0x803C99A4);
 	MakeName(0x803C99A4, "aWmv");
 	MakeStr(0x803C99A4, 0x803C99A8);
+}
+
+
+static part_8() {
 	MakeName(0x803C99A8, "aWvx");
 	MakeStr(0x803C99A8, 0x803C99AC);
 	MakeName(0x803C99AC, "aXbm");
@@ -8046,10 +8066,6 @@ static part_7() {
 	MakeStr(0x803C99C0, 0x803C99C6);
 	MakeName(0x803C99C8, "aClose");
 	MakeStr(0x803C99C8, 0x803C99CE);
-}
-
-
-static part_8() {
 	MakeName(0x803C99D0, "aEn");
 	MakeStr(0x803C99D0, 0x803C99D3);
 	MakeName(0x803C99D4, "aD_1");
@@ -8584,8 +8600,9 @@ static part_8() {
 	MakeStr(0x803CF81C, 0x803CF81F);
 	MakeName(0x803CF820, "aD_2");
 	MakeStr(0x803CF820, 0x803CF823);
-	MakeComm(0x803CF8A0, "Luigi's character (Character Slot 0)");
-	MakeName(0x803CF8A0, "CharacterLuigi");
+	MakeComm(0x803CF89F, "The follow values are a little weird, they are used to select the course as well as the character model in the character select screen (but not in the actual game).\nFor example if I change "Peach" to "Daisy" when you select Peach on the character select screen you will end up seeing the Daisy model. Then when you try to load Peach Beach you will end up with Daisy Cruiser.");
+	MakeComm(0x803CF8A0, "Luigi's Circuit (Map Slot 0)\nWARNING: Changing this will most likely break the game because there is special code to load Luigi's circuit. If a speed other than 50cc is selected the game will add a 2 to the end of this string and load Luigi2.arc. For example, changing this to "Mario" and trying to use a speed other than 50cc will result in the game trying to load "Mario2" and crash.");
+	MakeName(0x803CF8A0, "CourseNameLuigi");
 	MakeComm(0x803CF8A8, "Peach Beach (Map Slot 1)");
 	MakeName(0x803CF8A8, "CourseNamePeach");
 	MakeComm(0x803CF8B0, "Dry Dry Desert (Map Slot 3)");
