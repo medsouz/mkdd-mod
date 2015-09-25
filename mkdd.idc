@@ -2493,6 +2493,9 @@ static part_2() {
 	MakeRptCmt(0x801BB410, "jumptable 801BB1E4 cases 136-139");
 	MakeRptCmt(0x801BB41C, "jumptable 801BB1E4 default case");
 	MakeName(0x801BB41C, "def_801BB1E4");
+	MakeName(0x801BE728, "DriverAnimateJuggle");
+	SetFunctionCmt(0x801BE7FC, "Assuming runxxx is the sound of their feet moving since it is the same for all drivers", 0);
+	MakeName(0x801BE7FC, "DriverSoundRunxxx");
 	MakeRptCmt(0x801C0330, "jumptable 801C032C cases 2,4,17-20,31,55-60,72-74,76,78,80,83,84,87,88,90,92,112,115,116,124,138,139,144,145,147");
 	MakeRptCmt(0x801C0338, "jumptable 801C032C default case");
 	MakeName(0x801C0338, "def_801C032C");
@@ -2504,6 +2507,8 @@ static part_2() {
 	MakeRptCmt(0x801C07B4, "jumptable 801C07A8 default case");
 	MakeName(0x801C07B4, "def_801C07A8");
 	MakeName(0x801C0A3C, "dlphn_GameInfoManager__IsInSuperCupMode___void__");
+	SetFunctionCmt(0x801C1660, "TODO: Test this", 0);
+	MakeName(0x801C1660, "GetDriverSound");
 	MakeRptCmt(0x801C4148, "jumptable 801C4144 cases 0,1,6,7,10-13,16,17");
 	MakeRptCmt(0x801C4150, "jumptable 801C4144 default case");
 	MakeName(0x801C4150, "def_801C4144");
@@ -2569,8 +2574,8 @@ static part_2() {
 	MakeRptCmt(0x801CDED8, "jumptable 801CDC50 case 10");
 	MakeRptCmt(0x801CDEF8, "jumptable 801CDC50 default case");
 	MakeName(0x801CDEF8, "def_801CDC50");
-	SetFunctionCmt(0x801CE3C0, "r2 seems to always be 803d45a0 when this function is called", 0);
-	MakeName(0x801CE3C0, "UnknownArray");
+	SetFunctionCmt(0x801CE3C0, "Switch statement to get the course name. Also appears to be used for character models in the character select screen.\nr2 seems to always be 803d45a0 when this function is called\nr3 is the ID number at the start and turns into the memory address of the course name at the end.", 0);
+	MakeName(0x801CE3C0, "GetCourseName");
 	MakeRptCmt(0x801CE3E8, "jumptable 801CE3E4 case 36");
 	MakeRptCmt(0x801CE3F0, "jumptable 801CE3E4 case 34");
 	MakeRptCmt(0x801CE3F8, "jumptable 801CE3E4 case 33");
@@ -2635,6 +2640,7 @@ static part_2() {
 	MakeRptCmt(0x801CE5D0, "jumptable 801CE3E4 case 67");
 	MakeRptCmt(0x801CE5D8, "jumptable 801CE3E4 case 68");
 	MakeRptCmt(0x801CE5E0, "jumptable 801CE3E4 case 69");
+	MakeComm(0x801CE5E8, "default: BabyLuigi (80336A98)");
 	MakeRptCmt(0x801CE5E8, "jumptable 801CE3E4 default case");
 	MakeName(0x801CE5E8, "def_801CE3E4");
 	MakeRptCmt(0x801CEE88, "jumptable 801CEE84 case 5");
@@ -3020,16 +3026,16 @@ static part_2() {
 	MakeRptCmt(0x801FE2BC, "jumptable 801FE2A0 case 7");
 	MakeRptCmt(0x801FE2C0, "jumptable 801FE2A0 default case");
 	MakeName(0x801FE2C0, "def_801FE2A0");
+}
+
+
+static part_3() {
 	MakeRptCmt(0x80202534, "jumptable 80202530 case 0");
 	MakeRptCmt(0x80202550, "jumptable 80202530 case 1");
 	MakeRptCmt(0x8020256C, "jumptable 80202530 case 2");
 	MakeRptCmt(0x80202588, "jumptable 80202530 case 3");
 	MakeRptCmt(0x802025A4, "jumptable 80202530 case 4");
 	MakeRptCmt(0x802025C0, "jumptable 80202530 case 5");
-}
-
-
-static part_3() {
 	MakeRptCmt(0x802025DC, "jumptable 80202530 case 6");
 	MakeRptCmt(0x802025F8, "jumptable 80202530 case 7");
 	MakeRptCmt(0x80202614, "jumptable 80202530 case 8");
@@ -3662,6 +3668,8 @@ static part_3() {
 	MakeStr(0x80329720, 0x80329742);
 	MakeName(0x80329748, "aAbcdefghijklmn");
 	MakeStr(0x80329748, 0x8032978A);
+	MakeComm(0x803298A0, "I'm not sure if this is actually used for anything ingame");
+	MakeName(0x803298A0, "MIMETypes");
 	MakeName(0x80329C08, "aGcn_mem_alloc_");
 	MakeStr(0x80329C08, 0x80329C3E);
 	MakeName(0x80329C40, "aMetrowerksCwRu");
@@ -4022,6 +4030,10 @@ static part_3() {
 	MakeStr(0x8032C349, 0x8032C351);
 	MakeName(0x8032C351, "aRpowm3a");
 	MakeStr(0x8032C351, 0x8032C359);
+}
+
+
+static part_4() {
 	MakeName(0x8032C35A, "aMirror");
 	MakeStr(0x8032C35A, 0x8032C361);
 	MakeName(0x8032C361, "aRcurs01_0");
@@ -4030,10 +4042,6 @@ static part_3() {
 	MakeStr(0x8032C369, 0x8032C371);
 	MakeName(0x8032C371, "aRcurs03");
 	MakeStr(0x8032C371, 0x8032C379);
-}
-
-
-static part_4() {
 	MakeName(0x8032C379, "aRchab02rchara0");
 	MakeStr(0x8032C379, 0x8032C389);
 	MakeName(0x8032C389, "aRchab01rchara0");
@@ -4576,6 +4584,10 @@ static part_4() {
 	MakeStr(0x80333FC8, 0x80333FD8);
 	MakeName(0x80333FD8, "aMoviePlay1_50_");
 	MakeStr(0x80333FD8, 0x80333FEB);
+	MakeName(0x803344C0, "aDriver_bmd_0");
+	MakeStr(0x803344C0, 0x803344CC);
+	MakeName(0x803344CC, "aDriver_200_bmd_0");
+	MakeStr(0x803344CC, 0x803344DC);
 	MakeName(0x803344DC, "aA_drive_a_bca");
 	MakeStr(0x803344DC, 0x803344EA);
 	MakeName(0x803344EC, "aA_drive_b_bca");
@@ -4824,8 +4836,7 @@ static part_4() {
 	MakeStr(0x80334D98, 0x80334DA1);
 	MakeName(0x80334DA4, "aP_hair_2");
 	MakeStr(0x80334DA4, 0x80334DAD);
-	MakeName(0x80334DB0, "aDriverSS");
-	MakeStr(0x80334DB0, 0x80334DBE);
+	MakeName(0x80334DB0, "DriverSubfile");
 	MakeName(0x80334DC0, "aDriverMarioDri");
 	MakeStr(0x80334DC0, 0x80334DD9);
 	MakeName(0x80334DDC, "aDriveranmSS_0");
@@ -5023,6 +5034,10 @@ static part_4() {
 	MakeName(0x80335594, "aStaffroll_12_1");
 	MakeStr(0x80335594, 0x803355A5);
 	MakeName(0x803355A8, "aStaffroll_13_1");
+}
+
+
+static part_5() {
 	MakeStr(0x803355A8, 0x803355B9);
 	MakeName(0x803355BC, "aStaffroll_14_2");
 	MakeStr(0x803355BC, 0x803355CE);
@@ -5034,10 +5049,6 @@ static part_4() {
 	MakeStr(0x803355F8, 0x8033560A);
 	MakeName(0x8033560C, "aStaffroll_14_3");
 	MakeStr(0x8033560C, 0x8033561E);
-}
-
-
-static part_5() {
 	MakeName(0x80335620, "aStaffroll_15_3");
 	MakeStr(0x80335620, 0x80335632);
 	MakeName(0x80335634, "aStaffroll_16_4");
@@ -6027,6 +6038,10 @@ static part_5() {
 	MakeName(0x803396C4, "aMk_dossun_c");
 	MakeStr(0x803396C4, 0x803396D0);
 	MakeName(0x803396D0, "aObjectsJg_th_b");
+}
+
+
+static part_6() {
 	MakeStr(0x803396D0, 0x803396E3);
 	MakeName(0x803396E4, "aObjectsJg_ww_b");
 	MakeStr(0x803396E4, 0x803396F7);
@@ -6038,10 +6053,6 @@ static part_5() {
 	MakeStr(0x80339720, 0x80339733);
 	MakeName(0x80339734, "aObjectsJg_wz2f");
 	MakeStr(0x80339734, 0x8033974A);
-}
-
-
-static part_6() {
 	MakeName(0x8033974C, "aObjectsJg_lk_b");
 	MakeStr(0x8033974C, 0x8033975F);
 	MakeName(0x80339760, "aObjectsJg_by_b");
@@ -7031,6 +7042,10 @@ static part_6() {
 	MakeName(0x80345740, "aDolphinSdkDvdR");
 	MakeStr(0x80345740, 0x80345785);
 	MakeName(0x80345788, "aLoadFst");
+}
+
+
+static part_7() {
 	MakeStr(0x80345788, 0x80345792);
 	MakeName(0x80345794, "aDvdchangediskF");
 	MakeStr(0x80345794, 0x803457C8);
@@ -7042,10 +7057,6 @@ static part_6() {
 	MakeName(0x8034588C, "jpt_800AE384");
 	MakeName(0x80345908, "aGameName___CCC");
 	MakeStr(0x80345908, 0x80345922);
-}
-
-
-static part_7() {
 	MakeName(0x80345924, "aCompany_____CC");
 	MakeStr(0x80345924, 0x8034593A);
 	MakeName(0x8034593C, "aDisk______D");
@@ -7696,6 +7707,11 @@ static part_7() {
 	MakeName(0x80350AA8, "jpt_801BA9F4");
 	MakeComm(0x80350C58, "jump table for switch statement");
 	MakeName(0x80350C58, "jpt_801BB1E4");
+	MakeName(0x80351148, "DriverAnimations");
+	MakeName(0x80351290, "DriverSounds");
+	MakeName(0x803512C0, "DriverNames");
+	MakeName(0x80351310, "DriverCommon");
+	MakeName(0x80351360, "DriverBones");
 	MakeComm(0x803513F0, "jump table for switch statement");
 	MakeName(0x803513F0, "jpt_801C032C");
 	MakeComm(0x80351640, "jump table for switch statement");
@@ -7719,7 +7735,7 @@ static part_7() {
 	MakeComm(0x8035242C, "jump table for switch statement");
 	MakeName(0x8035242C, "jpt_801CDC50");
 	MakeComm(0x80352478, "jump table for switch statement");
-	MakeName(0x80352478, "jpt_801CE3E4");
+	MakeName(0x80352478, "CourseNameSwitch");
 	MakeComm(0x80352590, "jump table for switch statement");
 	MakeName(0x80352590, "jpt_801CEF50");
 	MakeComm(0x803525E4, "jump table for switch statement");
@@ -8030,6 +8046,10 @@ static part_7() {
 	MakeStr(0x803C9978, 0x803C997C);
 	MakeName(0x803C997C, "aTiff");
 	MakeStr(0x803C997C, 0x803C9981);
+}
+
+
+static part_8() {
 	MakeName(0x803C9984, "aTxt");
 	MakeStr(0x803C9984, 0x803C9988);
 	MakeName(0x803C9988, "aUlw");
@@ -8046,10 +8066,6 @@ static part_7() {
 	MakeStr(0x803C99A0, 0x803C99A4);
 	MakeName(0x803C99A4, "aWmv");
 	MakeStr(0x803C99A4, 0x803C99A8);
-}
-
-
-static part_8() {
 	MakeName(0x803C99A8, "aWvx");
 	MakeStr(0x803C99A8, 0x803C99AC);
 	MakeName(0x803C99AC, "aXbm");
@@ -8226,6 +8242,16 @@ static part_8() {
 	MakeStr(0x803CE328, 0x803CE32F);
 	MakeName(0x803CE330, "aGo_brk");
 	MakeStr(0x803CE330, 0x803CE337);
+	MakeName(0x803CE5E0, "aS_blo");
+	MakeStr(0x803CE5E0, 0x803CE5E8);
+	MakeName(0x803CE5E8, "aS_bck");
+	MakeStr(0x803CE5E8, 0x803CE5F0);
+	MakeName(0x803CE5F0, "aS_bpk");
+	MakeStr(0x803CE5F0, 0x803CE5F8);
+	MakeName(0x803CE5F8, "aS_btk");
+	MakeStr(0x803CE5F8, 0x803CE600);
+	MakeName(0x803CE600, "aS_brk");
+	MakeStr(0x803CE600, 0x803CE608);
 	MakeName(0x803CF118, "aDummy");
 	MakeStr(0x803CF118, 0x803CF11E);
 	MakeName(0x803CF120, "aPeach");
@@ -8651,8 +8677,10 @@ static part_8() {
 	MakeStr(0x803CF958, 0x803CF960);
 	MakeName(0x803CF960, "aTest12");
 	MakeStr(0x803CF960, 0x803CF968);
-	MakeName(0x803CF968, "aE3a3");
-	MakeStr(0x803CF968, 0x803CF970);
+	MakeName(0x803CF968, "aE3");
+	MakeStr(0x803CF968, 0x803CF96C);
+	MakeName(0x803CF96C, "aA3");
+	MakeStr(0x803CF96C, 0x803CF970);
 	MakeName(0x803CF970, "aTest13");
 	MakeStr(0x803CF970, 0x803CF978);
 	MakeName(0x803CF978, "aTest14");
@@ -8791,6 +8819,8 @@ static part_8() {
 	MakeStr(0x803CFB70, 0x803CFB78);
 	MakeName(0x803CFB78, "aS_0");
 	MakeStr(0x803CFB78, 0x803CFB7C);
+	MakeName(0x803CFB7C, "aS_S");
+	MakeStr(0x803CFB7C, 0x803CFB81);
 	MakeName(0x803CFCE0, "aPata");
 	MakeStr(0x803CFCE0, 0x803CFCE5);
 	MakeName(0x803CFCE8, "aNoko");
