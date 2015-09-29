@@ -2496,6 +2496,8 @@ static part_2() {
 	MakeName(0x801BE728, "DriverAnimateJuggle");
 	SetFunctionCmt(0x801BE7FC, "Assuming runxxx is the sound of their feet moving since it is the same for all drivers", 0);
 	MakeName(0x801BE7FC, "DriverSoundRunxxx");
+	MakeName(0x801BEE64, "GetDriverName");
+	MakeComm(0x801BEEB8, "Assumimg r13 is 803D1420 (it seems to always be) 803C9C58 is loaded");
 	MakeRptCmt(0x801C0330, "jumptable 801C032C cases 2,4,17-20,31,55-60,72-74,76,78,80,83,84,87,88,90,92,112,115,116,124,138,139,144,145,147");
 	MakeRptCmt(0x801C0338, "jumptable 801C032C default case");
 	MakeName(0x801C0338, "def_801C032C");
@@ -2507,8 +2509,13 @@ static part_2() {
 	MakeRptCmt(0x801C07B4, "jumptable 801C07A8 default case");
 	MakeName(0x801C07B4, "def_801C07A8");
 	MakeName(0x801C0A3C, "dlphn_GameInfoManager__IsInSuperCupMode___void__");
+	SetFunctionCmt(0x801C154C, "I don't really know what to call this. It stores some registers and loads them again after running GetDriverSound", 0);
+	MakeName(0x801C154C, "GetDriverSound_Wrapper");
+	MakeComm(0x801C15D0, "Check if the driver doesn't have a common folder?");
+	MakeComm(0x801C15E8, "Get the driver's name");
 	SetFunctionCmt(0x801C1660, "TODO: Test this", 0);
 	MakeName(0x801C1660, "GetDriverSound");
+	MakeComm(0x801C167C, "TODO: Track down this cmp");
 	MakeRptCmt(0x801C4148, "jumptable 801C4144 cases 0,1,6,7,10-13,16,17");
 	MakeRptCmt(0x801C4150, "jumptable 801C4144 default case");
 	MakeName(0x801C4150, "def_801C4144");
@@ -2577,72 +2584,136 @@ static part_2() {
 	SetFunctionCmt(0x801CE3C0, "Switch statement to get the course name. Also appears to be used for character models in the character select screen.\nr2 seems to always be 803d45a0 when this function is called\nr3 is the ID number at the start and turns into the memory address of the course name at the end.", 0);
 	MakeName(0x801CE3C0, "GetCourseName");
 	MakeRptCmt(0x801CE3E8, "jumptable 801CE3E4 case 36");
+	MakeName(0x801CE3E8, "GetCourseName_Case_36");
 	MakeRptCmt(0x801CE3F0, "jumptable 801CE3E4 case 34");
+	MakeName(0x801CE3F0, "GetCourseName_Case_34");
 	MakeRptCmt(0x801CE3F8, "jumptable 801CE3E4 case 33");
+	MakeName(0x801CE3F8, "GetCourseName_Case_33");
 	MakeRptCmt(0x801CE400, "jumptable 801CE3E4 case 40");
+	MakeName(0x801CE400, "GetCourseName_Case_40");
 	MakeRptCmt(0x801CE408, "jumptable 801CE3E4 case 50");
+	MakeName(0x801CE408, "GetCourseName_Case_50");
 	MakeRptCmt(0x801CE410, "jumptable 801CE3E4 case 35");
+	MakeName(0x801CE410, "GetCourseName_Case_35");
 	MakeRptCmt(0x801CE418, "jumptable 801CE3E4 case 51");
+	MakeName(0x801CE418, "GetCourseName_Case_51");
 	MakeRptCmt(0x801CE420, "jumptable 801CE3E4 case 37");
+	MakeName(0x801CE420, "GetCourseName_Case_37");
 	MakeRptCmt(0x801CE428, "jumptable 801CE3E4 case 41");
+	MakeName(0x801CE428, "GetCourseName_Case_41");
 	MakeRptCmt(0x801CE430, "jumptable 801CE3E4 case 42");
+	MakeName(0x801CE430, "GetCourseName_Case_42");
 	MakeRptCmt(0x801CE438, "jumptable 801CE3E4 case 45");
+	MakeName(0x801CE438, "GetCourseName_Case_45");
 	MakeRptCmt(0x801CE440, "jumptable 801CE3E4 case 47");
+	MakeName(0x801CE440, "GetCourseName_Case_47");
 	MakeRptCmt(0x801CE448, "jumptable 801CE3E4 case 44");
+	MakeName(0x801CE448, "GetCourseName_Case_44");
 	MakeRptCmt(0x801CE450, "jumptable 801CE3E4 case 38");
+	MakeName(0x801CE450, "GetCourseName_Case_38");
 	MakeRptCmt(0x801CE458, "jumptable 801CE3E4 case 43");
+	MakeName(0x801CE458, "GetCourseName_Case_43");
 	MakeRptCmt(0x801CE460, "jumptable 801CE3E4 case 49");
+	MakeName(0x801CE460, "GetCourseName_Case_49");
 	MakeRptCmt(0x801CE468, "jumptable 801CE3E4 case 1");
+	MakeName(0x801CE468, "GetCourseName_Case_1");
 	MakeRptCmt(0x801CE470, "jumptable 801CE3E4 case 2");
+	MakeName(0x801CE470, "GetCourseName_Case_2");
 	MakeRptCmt(0x801CE478, "jumptable 801CE3E4 case 3");
+	MakeName(0x801CE478, "GetCourseName_Case_3");
 	MakeRptCmt(0x801CE480, "jumptable 801CE3E4 case 4");
+	MakeName(0x801CE480, "GetCourseName_Case_4");
 	MakeRptCmt(0x801CE488, "jumptable 801CE3E4 case 5");
+	MakeName(0x801CE488, "GetCourseName_Case_5");
 	MakeRptCmt(0x801CE490, "jumptable 801CE3E4 case 6");
+	MakeName(0x801CE490, "GetCourseName_Case_6");
 	MakeRptCmt(0x801CE498, "jumptable 801CE3E4 case 7");
+	MakeName(0x801CE498, "GetCourseName_Case_7");
 	MakeRptCmt(0x801CE4A0, "jumptable 801CE3E4 case 8");
+	MakeName(0x801CE4A0, "GetCourseName_Case_8");
 	MakeRptCmt(0x801CE4A8, "jumptable 801CE3E4 case 9");
+	MakeName(0x801CE4A8, "GetCourseName_Case_9");
 	MakeRptCmt(0x801CE4B0, "jumptable 801CE3E4 case 10");
+	MakeName(0x801CE4B0, "GetCourseName_Case_10");
 	MakeRptCmt(0x801CE4B8, "jumptable 801CE3E4 case 11");
+	MakeName(0x801CE4B8, "GetCourseName_Case_11");
 	MakeRptCmt(0x801CE4C0, "jumptable 801CE3E4 case 12");
+	MakeName(0x801CE4C0, "GetCourseName_Case_12");
 	MakeRptCmt(0x801CE4C8, "jumptable 801CE3E4 case 31");
+	MakeName(0x801CE4C8, "GetCourseName_Case_31");
 	MakeRptCmt(0x801CE4D0, "jumptable 801CE3E4 case 29");
+	MakeName(0x801CE4D0, "GetCourseName_Case_29");
 	MakeRptCmt(0x801CE4D8, "jumptable 801CE3E4 case 30");
+	MakeName(0x801CE4D8, "GetCourseName_Case_30");
 	MakeRptCmt(0x801CE4E0, "jumptable 801CE3E4 case 13");
+	MakeName(0x801CE4E0, "GetCourseName_Case_13");
 	MakeRptCmt(0x801CE4E8, "jumptable 801CE3E4 case 14");
+	MakeName(0x801CE4E8, "GetCourseName_Case_14");
 	MakeRptCmt(0x801CE4F0, "jumptable 801CE3E4 case 15");
+	MakeName(0x801CE4F0, "GetCourseName_Case_15");
 	MakeRptCmt(0x801CE4F8, "jumptable 801CE3E4 case 16");
+	MakeName(0x801CE4F8, "GetCourseName_Case_16");
 	MakeRptCmt(0x801CE500, "jumptable 801CE3E4 case 17");
+	MakeName(0x801CE500, "GetCourseName_Case_17");
 	MakeRptCmt(0x801CE508, "jumptable 801CE3E4 case 18");
+	MakeName(0x801CE508, "GetCourseName_Case_18");
 	MakeRptCmt(0x801CE510, "jumptable 801CE3E4 case 19");
+	MakeName(0x801CE510, "GetCourseName_Case_19");
 	MakeRptCmt(0x801CE518, "jumptable 801CE3E4 case 20");
+	MakeName(0x801CE518, "GetCourseName_Case_20");
 	MakeRptCmt(0x801CE520, "jumptable 801CE3E4 case 21");
+	MakeName(0x801CE520, "GetCourseName_Case_21");
 	MakeRptCmt(0x801CE528, "jumptable 801CE3E4 case 22");
+	MakeName(0x801CE528, "GetCourseName_Case_22");
 	MakeRptCmt(0x801CE530, "jumptable 801CE3E4 case 23");
+	MakeName(0x801CE530, "GetCourseName_Case_23");
 	MakeRptCmt(0x801CE538, "jumptable 801CE3E4 case 24");
+	MakeName(0x801CE538, "GetCourseName_Case_24");
 	MakeRptCmt(0x801CE540, "jumptable 801CE3E4 case 25");
+	MakeName(0x801CE540, "GetCourseName_Case_25");
 	MakeRptCmt(0x801CE548, "jumptable 801CE3E4 case 26");
+	MakeName(0x801CE548, "GetCourseName_Case_26");
 	MakeRptCmt(0x801CE550, "jumptable 801CE3E4 case 27");
+	MakeName(0x801CE550, "GetCourseName_Case_27");
 	MakeRptCmt(0x801CE558, "jumptable 801CE3E4 case 52");
+	MakeName(0x801CE558, "GetCourseName_Case_52");
 	MakeRptCmt(0x801CE560, "jumptable 801CE3E4 case 53");
+	MakeName(0x801CE560, "GetCourseName_Case_53");
 	MakeRptCmt(0x801CE568, "jumptable 801CE3E4 case 54");
+	MakeName(0x801CE568, "GetCourseName_Case_54");
 	MakeRptCmt(0x801CE570, "jumptable 801CE3E4 case 55");
+	MakeName(0x801CE570, "GetCourseName_Case_55");
 	MakeRptCmt(0x801CE578, "jumptable 801CE3E4 case 56");
+	MakeName(0x801CE578, "GetCourseName_Case_56");
 	MakeRptCmt(0x801CE580, "jumptable 801CE3E4 case 57");
+	MakeName(0x801CE580, "GetCourseName_Case_57");
 	MakeRptCmt(0x801CE588, "jumptable 801CE3E4 case 58");
+	MakeName(0x801CE588, "GetCourseName_Case_58");
 	MakeRptCmt(0x801CE590, "jumptable 801CE3E4 case 59");
+	MakeName(0x801CE590, "GetCourseName_Case_59");
 	MakeRptCmt(0x801CE598, "jumptable 801CE3E4 case 60");
+	MakeName(0x801CE598, "GetCourseName_Case_60");
 	MakeRptCmt(0x801CE5A0, "jumptable 801CE3E4 case 61");
+	MakeName(0x801CE5A0, "GetCourseName_Case_61");
 	MakeRptCmt(0x801CE5A8, "jumptable 801CE3E4 case 62");
+	MakeName(0x801CE5A8, "GetCourseName_Case_62");
 	MakeRptCmt(0x801CE5B0, "jumptable 801CE3E4 case 63");
+	MakeName(0x801CE5B0, "GetCourseName_Case_63");
 	MakeRptCmt(0x801CE5B8, "jumptable 801CE3E4 case 64");
+	MakeName(0x801CE5B8, "GetCourseName_Case_64");
 	MakeRptCmt(0x801CE5C0, "jumptable 801CE3E4 case 65");
+	MakeName(0x801CE5C0, "GetCourseName_Case_65");
 	MakeRptCmt(0x801CE5C8, "jumptable 801CE3E4 case 66");
+	MakeName(0x801CE5C8, "GetCourseName_Case_66");
 	MakeRptCmt(0x801CE5D0, "jumptable 801CE3E4 case 67");
+	MakeName(0x801CE5D0, "GetCourseName_Case_67");
 	MakeRptCmt(0x801CE5D8, "jumptable 801CE3E4 case 68");
+	MakeName(0x801CE5D8, "GetCourseName_Case_68");
 	MakeRptCmt(0x801CE5E0, "jumptable 801CE3E4 case 69");
+	MakeName(0x801CE5E0, "GetCourseName_Case_69");
 	MakeComm(0x801CE5E8, "default: BabyLuigi (80336A98)");
 	MakeRptCmt(0x801CE5E8, "jumptable 801CE3E4 default case");
-	MakeName(0x801CE5E8, "def_801CE3E4");
+	MakeName(0x801CE5E8, "GetCourseName_Default");
 	MakeRptCmt(0x801CEE88, "jumptable 801CEE84 case 5");
 	MakeRptCmt(0x801CEE90, "jumptable 801CEE84 case 13");
 	MakeRptCmt(0x801CEE98, "jumptable 801CEE84 case 3");
@@ -2772,6 +2843,8 @@ static part_2() {
 	MakeRptCmt(0x801CF594, "jumptable 801CF538 case 11");
 	MakeRptCmt(0x801CF59C, "jumptable 801CF538 default case");
 	MakeName(0x801CF59C, "def_801CF538");
+	SetFunctionCmt(0x801CF65C, "r1 = Seems to always be 803E21B0\nr2 = Seems to always be 803d45a0\nr5 = driver name\nr6 = sound/animation name\n\nI'm pretty sure that this is only supposed to be used for animations. It is used by GetDriverSound but that is only used once per sound.", 0);
+	MakeName(0x801CF65C, "PlayDriverEffect");
 	MakeRptCmt(0x801CFB68, "jumptable 801CFB64 case 0");
 	MakeRptCmt(0x801CFB88, "jumptable 801CFB64 case 1");
 	MakeRptCmt(0x801CFC48, "jumptable 801CFB64 case 2");
@@ -2953,6 +3026,10 @@ static part_2() {
 	MakeRptCmt(0x801DBB1C, "jumptable 801DBAA0 case 18");
 	MakeRptCmt(0x801DBB24, "jumptable 801DBAA0 default case");
 	MakeName(0x801DBB24, "def_801DBAA0");
+}
+
+
+static part_3() {
 	MakeRptCmt(0x801DBB5C, "jumptable 801DBB58 case 0");
 	MakeRptCmt(0x801DBB64, "jumptable 801DBB58 case 1");
 	MakeRptCmt(0x801DBB6C, "jumptable 801DBB58 case 2");
@@ -3026,10 +3103,6 @@ static part_2() {
 	MakeRptCmt(0x801FE2BC, "jumptable 801FE2A0 case 7");
 	MakeRptCmt(0x801FE2C0, "jumptable 801FE2A0 default case");
 	MakeName(0x801FE2C0, "def_801FE2A0");
-}
-
-
-static part_3() {
 	MakeRptCmt(0x80202534, "jumptable 80202530 case 0");
 	MakeRptCmt(0x80202550, "jumptable 80202530 case 1");
 	MakeRptCmt(0x8020256C, "jumptable 80202530 case 2");
@@ -3957,6 +4030,10 @@ static part_3() {
 	MakeName(0x8032C10C, "aGpline_bck");
 	MakeStr(0x8032C10C, 0x8032C117);
 	MakeName(0x8032C118, "aTalayout_blo");
+}
+
+
+static part_4() {
 	MakeStr(0x8032C118, 0x8032C125);
 	MakeName(0x8032C128, "aTalayout_bck");
 	MakeStr(0x8032C128, 0x8032C135);
@@ -4030,10 +4107,6 @@ static part_3() {
 	MakeStr(0x8032C349, 0x8032C351);
 	MakeName(0x8032C351, "aRpowm3a");
 	MakeStr(0x8032C351, 0x8032C359);
-}
-
-
-static part_4() {
 	MakeName(0x8032C35A, "aMirror");
 	MakeStr(0x8032C35A, 0x8032C361);
 	MakeName(0x8032C361, "aRcurs01_0");
@@ -4584,6 +4657,8 @@ static part_4() {
 	MakeStr(0x80333FC8, 0x80333FD8);
 	MakeName(0x80333FD8, "aMoviePlay1_50_");
 	MakeStr(0x80333FD8, 0x80333FEB);
+	MakeComm(0x80333FF0, "Yes? Yes.");
+	MakeName(0x80333FF0, "TheNumberOne");
 	MakeName(0x803344C0, "aDriver_bmd_0");
 	MakeStr(0x803344C0, 0x803344CC);
 	MakeName(0x803344CC, "aDriver_200_bmd_0");
@@ -4893,6 +4968,8 @@ static part_4() {
 	MakeStr(0x80334F70, 0x80334F7E);
 	MakeName(0x80334F80, "aDriverFeelingS");
 	MakeStr(0x80334F80, 0x80334F93);
+	MakeName(0x80334FD0, "aDriverKinopicoKinoko");
+	MakeStr(0x80334FD0, 0x80334FF1);
 	MakeName(0x80334FF4, "aK_hair_all_roo");
 	MakeStr(0x80334FF4, 0x80335004);
 	MakeName(0x80335004, "aK_hair_l1");
@@ -4957,6 +5034,10 @@ static part_4() {
 	MakeStr(0x80335288, 0x8033529A);
 	MakeName(0x8033529C, "aStaffroll_16c_");
 	MakeStr(0x8033529C, 0x803352AE);
+}
+
+
+static part_5() {
 	MakeName(0x803352B0, "aStaffroll_17c_");
 	MakeStr(0x803352B0, 0x803352C2);
 	MakeName(0x803352C4, "aStaffroll_18_b");
@@ -5034,10 +5115,6 @@ static part_4() {
 	MakeName(0x80335594, "aStaffroll_12_1");
 	MakeStr(0x80335594, 0x803355A5);
 	MakeName(0x803355A8, "aStaffroll_13_1");
-}
-
-
-static part_5() {
 	MakeStr(0x803355A8, 0x803355B9);
 	MakeName(0x803355BC, "aStaffroll_14_2");
 	MakeStr(0x803355BC, 0x803355CE);
@@ -5961,6 +6038,10 @@ static part_5() {
 	MakeStr(0x80339338, 0x80339345);
 	MakeName(0x80339348, "aMk_thunder_b");
 	MakeStr(0x80339348, 0x80339355);
+}
+
+
+static part_6() {
 	MakeName(0x80339358, "aMk_thunder_c");
 	MakeStr(0x80339358, 0x80339365);
 	MakeName(0x80339368, "aMk_thunder_d");
@@ -6038,10 +6119,6 @@ static part_5() {
 	MakeName(0x803396C4, "aMk_dossun_c");
 	MakeStr(0x803396C4, 0x803396D0);
 	MakeName(0x803396D0, "aObjectsJg_th_b");
-}
-
-
-static part_6() {
 	MakeStr(0x803396D0, 0x803396E3);
 	MakeName(0x803396E4, "aObjectsJg_ww_b");
 	MakeStr(0x803396E4, 0x803396F7);
@@ -6965,6 +7042,10 @@ static part_6() {
 	MakeStr(0x8033C2CC, 0x8033C2E1);
 	MakeName(0x8033C2E4, "aDostartfixpath");
 	MakeStr(0x8033C2E4, 0x8033C2F6);
+}
+
+
+static part_7() {
 	MakeName(0x8033C2F8, "aDostartpathcam");
 	MakeStr(0x8033C2F8, 0x8033C307);
 	MakeName(0x8033C308, "aDostartlookpat");
@@ -7042,10 +7123,6 @@ static part_6() {
 	MakeName(0x80345740, "aDolphinSdkDvdR");
 	MakeStr(0x80345740, 0x80345785);
 	MakeName(0x80345788, "aLoadFst");
-}
-
-
-static part_7() {
 	MakeStr(0x80345788, 0x80345792);
 	MakeName(0x80345794, "aDvdchangediskF");
 	MakeStr(0x80345794, 0x803457C8);
@@ -7710,7 +7787,7 @@ static part_7() {
 	MakeName(0x80351148, "DriverAnimations");
 	MakeName(0x80351290, "DriverSounds");
 	MakeName(0x803512C0, "DriverNames");
-	MakeName(0x80351310, "DriverCommon");
+	MakeName(0x80351310, "DriverCommonNames");
 	MakeName(0x80351360, "DriverBones");
 	MakeComm(0x803513F0, "jump table for switch statement");
 	MakeName(0x803513F0, "jpt_801C032C");
@@ -7969,6 +8046,10 @@ static part_7() {
 	MakeName(0x803C98B4, "aJpeg");
 	MakeStr(0x803C98B4, 0x803C98B9);
 	MakeName(0x803C98BC, "aJpg");
+}
+
+
+static part_8() {
 	MakeStr(0x803C98BC, 0x803C98C0);
 	MakeName(0x803C98C0, "aJs");
 	MakeStr(0x803C98C0, 0x803C98C3);
@@ -8046,10 +8127,6 @@ static part_7() {
 	MakeStr(0x803C9978, 0x803C997C);
 	MakeName(0x803C997C, "aTiff");
 	MakeStr(0x803C997C, 0x803C9981);
-}
-
-
-static part_8() {
 	MakeName(0x803C9984, "aTxt");
 	MakeStr(0x803C9984, 0x803C9988);
 	MakeName(0x803C9988, "aUlw");
@@ -8911,6 +8988,14 @@ static part_8() {
 	MakeStr(0x803CFE38, 0x803CFE3B);
 	MakeName(0x803CFE3C, "aA_11");
 	MakeStr(0x803CFE3C, 0x803CFE3E);
+	MakeName(0x803CFE80, "aCourse_1");
+	MakeStr(0x803CFE80, 0x803CFE87);
+	MakeName(0x803CFE88, "aStage");
+	MakeStr(0x803CFE88, 0x803CFE8E);
+	MakeName(0x803CFE90, "aOff");
+	MakeStr(0x803CFE90, 0x803CFE94);
+	MakeName(0x803CFE94, "aOn");
+	MakeStr(0x803CFE94, 0x803CFE97);
 	MakeName(0x803D0300, "aDrv0");
 	MakeStr(0x803D0300, 0x803D0305);
 	MakeName(0x803D0308, "aDrv1");
@@ -8965,6 +9050,10 @@ static part_8() {
 	MakeStr(0x803D10A8, 0x803D10AE);
 	MakeName(0x803D10B0, "aArm03");
 	MakeStr(0x803D10B0, 0x803D10B6);
+}
+
+
+static part_9() {
 	MakeName(0x803D10B8, "aArm04");
 	MakeStr(0x803D10B8, 0x803D10BE);
 	MakeName(0x803D10C0, "aArm05");
@@ -9004,23 +9093,25 @@ static part_8() {
 static parts() {
 	Message("\nSTART!\n");
 	part_0();
-	Message("Part 0 of 8 Completed\n");
+	Message("Part 0 of 9 Completed\n");
 	part_1();
-	Message("Part 1 of 8 Completed\n");
+	Message("Part 1 of 9 Completed\n");
 	part_2();
-	Message("Part 2 of 8 Completed\n");
+	Message("Part 2 of 9 Completed\n");
 	part_3();
-	Message("Part 3 of 8 Completed\n");
+	Message("Part 3 of 9 Completed\n");
 	part_4();
-	Message("Part 4 of 8 Completed\n");
+	Message("Part 4 of 9 Completed\n");
 	part_5();
-	Message("Part 5 of 8 Completed\n");
+	Message("Part 5 of 9 Completed\n");
 	part_6();
-	Message("Part 6 of 8 Completed\n");
+	Message("Part 6 of 9 Completed\n");
 	part_7();
-	Message("Part 7 of 8 Completed\n");
+	Message("Part 7 of 9 Completed\n");
 	part_8();
-	Message("Part 8 of 8 Completed\n");
+	Message("Part 8 of 9 Completed\n");
+	part_9();
+	Message("Part 9 of 9 Completed\n");
 	Message("\nFINISHED!\n");
 }
 
