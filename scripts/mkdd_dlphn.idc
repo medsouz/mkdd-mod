@@ -1,3 +1,4 @@
+//Dolphin generated names
 #include <idc.idc>
 static main() {
 MakeFunction(0x80003100, BADADDR); MakeName(0x80003100, "dlphn___check_pad3");
