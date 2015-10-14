@@ -1,2 +1,10 @@
+#Mario Kart: Double Dash iso image
+mkdd*.iso
+
 #Extracted Mario Kart: Double Dash disk
 GM4E01/
+
+#Compiled sources
+*.bin
+*.elf
+*.o
