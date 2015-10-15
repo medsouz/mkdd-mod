@@ -20,9 +20,11 @@ clean:
 #Run the patched ISO in dolphin
 test: mkdd-patched.iso
 ifeq ($(OS),Windows_NT)
-	dolphin /d /e mkdd-patched.iso #Dolphin uses /s instead of -s on Windows
+	#Dolphin uses /s instead of -s on Windows
+	dolphin /d /e mkdd-patched.iso
 else
-	dolphin-emu -d -e mkdd-patched.iso #Dolphin is usually named dolphin-emu on Linux to avoid confusion with the dolphin file manager
+	#Dolphin is usually named dolphin-emu on Linux to avoid confusion with the dolphin file manager
+	dolphin-emu -d -e mkdd-patched.iso
 endif
 
 include src/makefile
