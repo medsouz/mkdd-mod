@@ -47,7 +47,7 @@ def IDCExport():
 			#TODO: Cleanup! Too much duplicate code!
 			if(flags & FF_NAME): #Name
 				name = GetTrueNameEx(ea, ea)
-				if(not name.startswith("nullsub_") and not name.startswith("def_") and not name.startswith("jpt_")):
+				if(not name.startswith("nullsub_") and not name.startswith("def_") and not name.startswith("jpt_") and not ((flags & FF_ASCI) and name.startswith("a")) and not name.startswith("dlphn_")): 
 					i = i + 1
 					if(name is not None and name != ""):
 						f.write("\tMakeName(0x%x, \"%s\");\n" % (ea, name))
