@@ -8,8 +8,8 @@ _main:
 	blrl
 
 	#This is our position
-	lis r30,mdszMain@ha
-	addi r30,r30,mdszMain@l
+	lis r30,newEntry@ha
+	addi r30,r30,newEntry@l
 
 	#Get memory positon of patches.bin
 	lis r29,_patches@ha
