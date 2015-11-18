@@ -18,3 +18,20 @@ Setup
 	- You can also use ```scripts/nintendump.py``` to generate a Dolphin symbol map to display the function names from IDA in Dolphin's debugger. To do this you need to select ```Dolphin *.map``` and save it as ```Dolphin Emulator/Maps/GM4E01.map```
 
 *If you have any issues feel free to contact medsouz for assistance*
+
+Features
+--------
+#### Mod
+* Basic code patching system
+* Allows multiple players to select the same characters.
+	* Contains a patch to prevent the player from picking the same character twice as this causes a crash
+
+#### Scripts
+- nintendump.py
+	- Allows you to dump your IDA database into an IDC script to allow you to distribute your work without having to attach the original source code of the program you're working on.
+		- This is useful for any IDA project and isn't Gamecube/Wii specific
+	- Allows you to generate a Dolphin debug symbol \*.map file to use in Dolphin's debugger
+		- This works for both Gamecube and Wii projects
+- sda_base_labeler.py
+	- Automatically generates comments on most references to ```_SDA_BASE_``` and ```_SDA2_BASE_``` to show the address that they are referencing.
+		- This works with any Gamecube project. It may work with Wii projects but I haven't looked into how they handle this.
