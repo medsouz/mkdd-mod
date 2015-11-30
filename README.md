@@ -6,7 +6,7 @@ Setup
 -----
 1. Setup IDA Pro. Install the [DOL loader](http://blog.delroth.net/2012/03/gcwii-dol-plugin-built-for-ida-6-1/) and [GekkoPS plugin](https://github.com/hyperiris/gekkoPS)
 2. Copy an NTSC ROM of Mario Kart Double Dash (GM4E01) into the root of the repository and name it mkdd.iso
-3. Run ```make GM4E01``` to extract the ISO using [gcmtool](https://github.com/medsouz/GCNToolset/tree/master/GCMTool)
+3. Run ```make GM4E01``` to extract the ISO using [GCDX](https://github.com/medsouz/GCNToolset/tree/master/GCDX)
 4. Open boot.dol from the newly generated GM4E01 directory in IDA Pro
 5. Once autoanalysis is complete run ```scripts/mkdd_dlphn.idc``` to apply the Dolphin generated variable names to your IDA database.
 6. Run ```scripts/sda_base_labeler.py``` to label any references to ```_SDA_BASE_``` (r13) and ```_SDA2_BASE_``` (r2). Use the following values to configure the script for Mario Kart Double Dash:

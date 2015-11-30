@@ -5,11 +5,11 @@ mkdd-patched.iso: GM4E01 bin/main.bin
 	#Patch the game's executable
 	wit dolpatch GM4E01/boot.dol new=text,auto load=803F0000,bin/main.bin entry=803F0000
 	#repack the game
-	gcmtool create $< $@
+	gcdx create $< $@
 
 #Extracted game directory
 GM4E01: mkdd.iso
-	gcmtool extract $<
+	gcdx extract $<
 
 bin:
 	mkdir $@
